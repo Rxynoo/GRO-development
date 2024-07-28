@@ -1,7 +1,43 @@
-body {
-  background-color: black;
+.container {
+  white-space: nowrap;
 }
 
-h1 {
+.title {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 24px;
+  margin: 0; /* Remove default margin to align properly */
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  background-color: #201e43;
+  background-image: linear-gradient(90deg, #201e43, #eeeeee);
+  background-blend-mode: overlay;
+  transition: background-color 0.3s;
+}
+
+.Services,
+.Features,
+.Plans {
+  padding: 10px 20px;
+  font-size: 16px;
   color: white;
+  background-color: #508c9b;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.1s;
+}
+
+.box {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 20px;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
 }
