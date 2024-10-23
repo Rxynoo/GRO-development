@@ -1,0 +1,95 @@
+body {
+  background-color: darkgrey;
+}
+
+span,
+a,
+h1 {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Styling for individual article cards */
+.card_article {
+  position: relative; /* Positions the element relative to its normal position */
+  overflow: hidden; /* Hides overflow content */
+}
+
+/* Styles for the images in the cards */
+.card_img {
+  width: 328px; /* Sets a fixed width for the image */
+  border-radius: 1.5rem; /* Rounds the corners of the image */
+}
+
+/* Hover effect on card images */
+.card_img:hover {
+  box-shadow: 0px 8px 25px hsla(0, 0%, 0%, 0.6);
+  /* Adds shadow when the image is hovered */
+}
+
+.card_data:hover {
+  transition: 0.3s 0.3s;
+  color: white;
+  font-size: 1.1rem;
+}
+.card_article:hover .card_img {
+  transition: 0.3s 0.3s;
+  filter: blur(5px);
+}
+/* Styling for card data inside images */
+.card_data {
+  z-index: 100; /* Ensures this element is layered on top */
+  width: 280px; /* Sets a fixed width */
+  background-color: var(
+    --container-color
+  ); /* Uses a custom CSS variable for background color */
+  padding: 1.5rem 2rem; /* Adds padding inside the element */
+  position: absolute; /* Positions the card data absolutely inside its parent */
+  bottom: 0rem; /* Aligns it at the bottom of the card */
+  left: 0rem; /* Aligns it to the left */
+  right: 0rem; /* Aligns it to the right */
+  margin-inline: auto; /* Centers the card data horizontally */
+  opacity: 0; /* Hides the card data initially */
+  transition: opacity 0.2s 0.3s; /* Transition for smooth appearance */
+}
+
+/* Styling for card titles */
+.card_title {
+  font-size: var(--h2-font-size); /* Uses custom variable for font size */
+  font-weight: 500; /* Sets medium font-weight */
+  color: var(--title-color); /* Uses a custom variable for color */
+  margin-bottom: 0.75rem; /* Adds margin below the title */
+}
+
+/* Styling for card buttons (links) */
+.card_button {
+  text-decoration: none; /* Removes underline from the link */
+  font-size: var(--small-font-size); /* Uses custom variable for font size */
+  font-weight: 500; /* Sets medium font-weight */
+  color: var(--first-color); /* Uses a custom variable for color */
+}
+
+/* Hover effect on card buttons */
+.card_button:hover {
+  color: white;
+  text-decoration: underline; /* Adds underline when hovered */
+}
+
+/* Hover effect to reveal card data */
+.card_article:hover .card_data {
+  animation: show-data 1s forwards; /* Triggers the 'show-data' animation */
+  opacity: 1; /* Makes the card data fully visible */
+  /* transition: opacity 0.3s; */ /* Smooth transition on hover */
+}
+
+/* Hover effect on the entire card article */
+.card_article:hover {
+  animation: remove-overflow 2s forwards; /* Triggers the 'remove-overflow' animation */
+}
+
+/* When card is not hovered, hide card data */
+.card_article:not(:hover) .card_data {
+  animation: remove-data 1s forwards; /* Triggers the 'remove-data' animation */
+}
